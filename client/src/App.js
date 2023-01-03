@@ -6,9 +6,9 @@ import { LandingPage } from "./Pages/LandingPage";
 import { Pokedex } from "./Pages/Pokedex/Pokedex";
 import { Create } from "./Pages/Create/Create";
 import { Navbar } from "./components/Navbar/Navbar";
-import { getPokemons, getTypes } from "./actions";
+import { getPokemons, getTypes } from "../src/redux/actions";
 import { Pokemon } from "./components/Pokemon/Pokemon";
-import { Team } from "./Pages/Team/Team";
+import { Favorite } from "./Pages/Favorite/Favorite";
 
 function App() {
   const dispatch = useDispatch();
@@ -20,7 +20,7 @@ function App() {
   return (
     <>
       <Navbar />
-      <Route exact path="/pokedex/:id" >
+      <Route exact path="/pokemon/:id" >
         <Pokemon />
       </Route>
       <Route exact path="/">
@@ -32,9 +32,10 @@ function App() {
       <Route exact path="/create">
         <Create />
       </Route>
-      <Route exact path="/team">
-        <Team />
+      <Route exact path="/favorite">
+        <Favorite/>
       </Route>
+      
     </>
   );
 }

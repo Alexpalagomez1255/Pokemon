@@ -7,24 +7,24 @@ export const LandingPage = () => {
     <div className={style.container}>
       <div>
         <h1>
-          <span>Find</span> all your <br />
-          favorite <br />
-          <span>Pokemon</span>
+          <span>Here</span> you'll <br />
+          find all your<br />
+          <span>Favorites Pokemon</span>
         </h1>
         <p>
-          You can know the type of Pokemon, <br />
-          its strengths, disadvantages and <br />
-          abilities.
+          From pikachu to Wigglytuff, <br />
+          From Grass type to Dragon types! <br />
+          Everything about pokemon!!! <br/>
+          Everything
         </p>
         <Link to="/home">
-          <input type="submit" value="See Pokemon" className={style.myButton} />
+          <input type="submit" value="Gotta cachem' all" className={style.myButton} />
         </Link>
-
-        <h3 className={style.love}>Hecho con &hearts; para henry</h3>
-      </div>
-
+        
+        </div>
+        
       <div>
-        <img src="img/pikachu.png" alt="" />
+        <img src="img/blackmew.png" alt="" />
       </div>
     </div>
   );

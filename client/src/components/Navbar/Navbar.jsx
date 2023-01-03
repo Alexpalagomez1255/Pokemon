@@ -12,7 +12,7 @@ export const Navbar = () => {
         <ul>
             <li><Link to="/home">Pokedex</Link></li>
             <li><Link to="/create">Create</Link></li>
-            <li><Link to="/team">My team</Link></li>
+            <li><Link to="/Favorite">Favorite</Link></li>
         </ul>
       </header>
     </div>

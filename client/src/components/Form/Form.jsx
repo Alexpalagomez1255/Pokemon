@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getPokemons } from "../../actions";
+import { getPokemons } from "../../redux/actions";
 import style from "./form.module.css";
 
 export const Form = () => {
@@ -18,13 +18,13 @@ export const Form = () => {
 
   const [data, setData] = useState({
     name: "",
-    vida: 0,
-    fuerza: 0,
-    defensa: 0,
-    velocidad: 0,
-    altura: 0,
-    peso: 0,
-    tipos: [],
+    hp: 0,
+    attack: 0,
+    defense: 0,
+    speed: 0,
+    height: 0,
+    weight: 0,
+    types: [],
   });
 
   const [errors, setErrors] = useState({});
@@ -66,7 +66,7 @@ export const Form = () => {
 
   const submit = async (e) => {
     e.preventDefault();
-    const crear = await fetch("https://kevindex.herokuapp.com/pokemons", {
+    const create = await fetch("http://localhost:3001/pokemons", {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -75,30 +75,29 @@ export const Form = () => {
       body: JSON.stringify(data),
     });
     dispatch(getPokemons());
-    const respuesta = await crear.json();
+    const respuesta = await create.json();
     console.log(respuesta);
     setData({
       name: "",
-      vida: 0,
-      fuerza: 0,
-      defensa: 0,
-      velocidad: 0,
-      altura: 0,
-      peso: 0,
-      tipos: [],
+      hp: 0,
+      attack: 0,
+      defense: 0,
+      speed: 0,
+      height: 0,
+      weight: 0,
+      types: [],
     });
   };
 
   return (
-    <div className={style.containerCreate}>
+    <div className={style.container}>
       <form action="POST" className={style.form} onSubmit={submit}>
-        <div className={style.separado}>
-          <h1>Crea tu propio Pokemon</h1>
+        <div className={style}>
+          <h1>Create your Pokemon!!!</h1>
           <p className={errors.name ? style.danger : style.question}>
             <label>Pokemon name</label>
             <input
               type="text"
-              placeholder="pikachu.."
               name="name"
               value={data.name}
               onChange={handleInputChange}
@@ -107,55 +106,55 @@ export const Form = () => {
           </p>
           {errors.name ? <p className="danger">{errors.username}</p> : null}
           <p className={style.question}>
-            <label>Vida</label>
+            <label>HP</label>
             <input
               type="number"
-              name="vida"
+              name="Hp"
               value={data.vida}
               onChange={handleInputChange}
             />
           </p>
           <p className={style.question}>
-            <label>Fuerza</label>
+            <label>ATTACK</label>
             <input
               type="number"
-              name="fuerza"
+              name="attack"
               value={data.fuerza}
               onChange={handleInputChange}
             />
           </p>
           <p className={style.question}>
-            <label>Defensa</label>
+            <label>DEFENSE</label>
             <input
               type="number"
-              name="defensa"
+              name="defense"
               value={data.defensa}
               onChange={handleInputChange}
             />
           </p>
           <p className={style.question}>
-            <label>Velocidad</label>
+            <label>speed</label>
             <input
               type="number"
-              name="velocidad"
+              name="speed"
               value={data.velocidad}
               onChange={handleInputChange}
             />
           </p>
           <p className={style.question}>
-            <label>Altura</label>
+            <label>height</label>
             <input
               type="number"
-              name="altura"
+              name="height"
               value={data.altura}
               onChange={handleInputChange}
             />
           </p>
           <p className={style.question}>
-            <label>Peso</label>
+            <label>weight</label>
             <input
               type="number"
-              name="peso"
+              name="weight"
               value={data.peso}
               onChange={handleInputChange}
             />
@@ -163,9 +162,10 @@ export const Form = () => {
         </div>
 
         <div className={style.hiddenCB}>
-          <h1>Tipos</h1>
+          <input type="submit" value="create" className={style.submit} />
+          <h1>Types</h1>
           <div className={style.tipos}>
-            {options?.map((t) => (
+            {options.slice(0, 10)?.map((t) => (
               <div key={t.slot}>
                 <input
                   type="checkbox"
@@ -178,7 +178,21 @@ export const Form = () => {
                 {t.slot % 4 === 0 ? <br /> : null}
               </div>
             ))}
-            <input type="submit" value="Crear" className={style.submit} />
+          </div>
+          <div className={style.tipos}>
+            {options.slice(11, 20)?.map((t) => (
+              <div key={t.slot}>
+                <input
+                  type="checkbox"
+                  name={t.name}
+                  value={t.slot}
+                  id={t.slot}
+                  onChange={checkbox}
+                />
+                <label htmlFor={t.slot}>{t.name}</label>
+                {t.slot % 4 === 0 ? <br /> : null}
+              </div>
+            ))}
           </div>
         </div>
       </form>

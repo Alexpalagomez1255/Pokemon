@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import style from "./search.module.css";
 import { useSelector, useDispatch } from "react-redux";
-import { filters, getByName, order, type } from "../../actions";
+import { filters, getByName, order, type } from "../../redux/actions";
 
 export const Search = () => {
   const dispatch = useDispatch();
@@ -41,31 +41,31 @@ export const Search = () => {
             id="searchterm"
             value={pokemons}
             onChange={handleInputChange}
-            placeholder="Encuentra tu pokemon..."
+            placeholder="Find your pokemon"
           />
           <input className={button} type="submit" value="Find!" />
         </div>
       </form>
       <div className={style.field2}>
         <select className={button} name="Type" onChange={byTipo}>
-          <option value="">Tipo:</option>
+          <option value="">Type</option>
           {options?.map((p) => (
             <option value={p.name} key={p.slot}>
               {p.name}
             </option>
           ))}
         </select>
-        <select name="creado" className={button} onChange={creadoBy}>
-          <option value="0">Creado por:</option>
-          <option value="1">API</option>
-          <option value="2">Fandom</option>
+        <select name="Origin" className={button} onChange={creadoBy}>
+          <option value="0">Origin</option>
+          <option value="1">DataBase</option>
+          <option value="2">Created</option>
         </select>
-        <select name="Ordenar" className={button} onChange={orderBy}>
-          <option value="">Ordenar por:</option>
+        <select name="Sort" className={button} onChange={orderBy}>
+          <option value="">Sort</option>
           <option value="a-z">A-Z</option>
           <option value="z-a">Z-A</option>
-          <option value="fuerza+">Fuerza+</option>
-          <option value="fuerza-">Fuerza-</option>
+          <option value="fuerza+">Higher Level Attack</option>
+          <option value="fuerza-">Lower Level Attack</option>
         </select>
       </div>
     </div>

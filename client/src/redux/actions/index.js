@@ -1,5 +1,5 @@
 export const getTypes = () => async (dispatch) => {
-  const response = await fetch("https://kevindex.herokuapp.com/types");
+  const response = await fetch("http://localhost:3001/types");
   console.log(response);
   const data = await response.json();
   console.log(data);
@@ -10,7 +10,7 @@ export const getTypes = () => async (dispatch) => {
 };
 
 export const getPokemons = () => async (dispatch) => {
-  const response = await fetch(`https://kevindex.herokuapp.com/pokemons`);
+  const response = await fetch(`http://localhost:3001/pokemons`);
   const data = await response.json();
   dispatch({
     type: "GET_POKEMONS",
@@ -20,7 +20,7 @@ export const getPokemons = () => async (dispatch) => {
 
 export const getByName = (name) => async (dispatch) => {
   const response = await fetch(
-    `https://kevindex.herokuapp.com/pokemons?name=${name}`
+    `http://localhost:3001/pokemons?name=${name}`
   );
   const data = await response.json();
   dispatch({
@@ -31,7 +31,7 @@ export const getByName = (name) => async (dispatch) => {
 
 export const filters = (num) => async (dispatch) => {
   const response = await fetch(
-    `https://kevindex.herokuapp.com/pokemons?by=${num}`
+    `http://localhost:3001/pokemons?by=${num}`
   );
   const data = await response.json();
   dispatch({

@@ -8,13 +8,13 @@ export const Card = ({ array, img }) => {
       <div className="container">
         {array.length ? (
           array.map((p) => (
-            <Link to={`/pokedex/${p.id}`} key={p.name}>
-              <figure className={p.type[0]}>
+            <Link to={`/pokemon/${p.id}`} key={p.name}>
+              <figure className={p.type}>
                 <div className="cardImageContainer">
                   <img src={p.img} alt="" className="CardImage" />
                 </div>
-                <figcaption className="cardCaption">
-                  <h1 className="cardName">#{p.idPoke ? `${p.idPoke}H` : p.id}-{p.name}</h1>
+                <div className="cardCaption">
+                  <h1 className="cardName">#{p.idPoke ? `${p.idPoke}` : p.id}-{p.name}</h1>
                   {p.type.length === 2 ? (
                     <div className="types">
                       <h3 className="cardType">{p.type[0]}</h3>
@@ -25,7 +25,7 @@ export const Card = ({ array, img }) => {
                       <h3 className="cardType">{p.type[0]}</h3>
                     </div>
                   )}
-                </figcaption>
+                </div>
               </figure>
             </Link>
           ))
@@ -33,7 +33,7 @@ export const Card = ({ array, img }) => {
           <img
             src={
               array.info
-                ? "https://media.giphy.com/media/UHAYP0FxJOmFBuOiC2/giphy.gif"
+                ? "https://static1.thegamerimages.com/wordpress/wp-content/uploads/2020/02/Pokemon-404-page.jpg"
                 : img
             }
             alt="Not found"
