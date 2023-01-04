@@ -60,3 +60,12 @@ export const add = (pokemon) => (dispatch) => {
     payload: pokemon,
   });
 };
+
+export const resetFilters = () => async (dispatch) =>{
+  const response = await fetch(`http://localhost:3001/pokemons`);
+  const data = await response.json();
+  dispatch({
+    type: "RESET",
+    payload:data
+  })
+}

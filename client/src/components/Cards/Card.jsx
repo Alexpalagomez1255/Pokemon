@@ -14,7 +14,7 @@ export const Card = ({ array, img }) => {
                   <img src={p.img} alt="" className="CardImage" />
                 </div>
                 <div className="cardCaption">
-                  <h1 className="cardName">#{p.idPoke ? `${p.idPoke}` : p.id}-{p.name}</h1>
+                  <h1 className="cardName">Id:{p.idPoke ? `${p.idPoke}` : p.id}</h1>
                   {p.type.length === 2 ? (
                     <div className="types">
                       <h3 className="cardType">{p.type[0]}</h3>
@@ -25,6 +25,7 @@ export const Card = ({ array, img }) => {
                       <h3 className="cardType">{p.type[0]}</h3>
                     </div>
                   )}
+                  <div className="cardName">{p.name}</div>
                 </div>
               </figure>
             </Link>

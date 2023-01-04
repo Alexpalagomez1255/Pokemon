@@ -18,7 +18,7 @@ export const LandingPage = () => {
           Everything
         </p>
         <Link to="/home">
-          <input type="submit" value="Gotta cachem' all" className={style.myButton} />
+          <input type="submit" value="Gotta catchem' all" className={style.myButton} />
         </Link>
         
         </div>

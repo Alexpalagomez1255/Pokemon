@@ -92,109 +92,113 @@ export const Form = () => {
   return (
     <div className={style.container}>
       <form action="POST" className={style.form} onSubmit={submit}>
-        <div className={style}>
-          <h1>Create your Pokemon!!!</h1>
-          <p className={errors.name ? style.danger : style.question}>
-            <label>Pokemon name</label>
-            <input
-              type="text"
-              name="name"
-              value={data.name}
-              onChange={handleInputChange}
-              required
-            />
-          </p>
-          {errors.name ? <p className="danger">{errors.username}</p> : null}
-          <p className={style.question}>
-            <label>HP</label>
-            <input
-              type="number"
-              name="Hp"
-              value={data.vida}
-              onChange={handleInputChange}
-            />
-          </p>
-          <p className={style.question}>
-            <label>ATTACK</label>
-            <input
-              type="number"
-              name="attack"
-              value={data.fuerza}
-              onChange={handleInputChange}
-            />
-          </p>
-          <p className={style.question}>
-            <label>DEFENSE</label>
-            <input
-              type="number"
-              name="defense"
-              value={data.defensa}
-              onChange={handleInputChange}
-            />
-          </p>
-          <p className={style.question}>
-            <label>speed</label>
-            <input
-              type="number"
-              name="speed"
-              value={data.velocidad}
-              onChange={handleInputChange}
-            />
-          </p>
-          <p className={style.question}>
-            <label>height</label>
-            <input
-              type="number"
-              name="height"
-              value={data.altura}
-              onChange={handleInputChange}
-            />
-          </p>
-          <p className={style.question}>
-            <label>weight</label>
-            <input
-              type="number"
-              name="weight"
-              value={data.peso}
-              onChange={handleInputChange}
-            />
-          </p>
-        </div>
-
-        <div className={style.hiddenCB}>
-          <input type="submit" value="create" className={style.submit} />
-          <h1>Types</h1>
-          <div className={style.tipos}>
-            {options.slice(0, 10)?.map((t) => (
-              <div key={t.slot}>
-                <input
-                  type="checkbox"
-                  name={t.name}
-                  value={t.slot}
-                  id={t.slot}
-                  onChange={checkbox}
-                />
-                <label htmlFor={t.slot}>{t.name}</label>
-                {t.slot % 4 === 0 ? <br /> : null}
-              </div>
-            ))}
+      
+        <section className={style.columns}>
+        <div className={style.column}><header><h1>Create your Pokemon!!!</h1></header></div>
+          <div className={style.column}>
+            <p className={errors.name ? style.danger : style.question}>
+              <label>Pokemon name</label>
+              <input
+                type="text"
+                name="name"
+                value={data.name}
+                onChange={handleInputChange}
+                required
+              />
+            </p>
+            {errors.name ? <p className="danger">{errors.username}</p> : null}
+            <p className={style.question}>
+              <label>HP</label>
+              <input
+                type="number"
+                name="Hp"
+                value={data.hp}
+                onChange={handleInputChange}
+              />
+            </p>
+            <p className={style.question}>
+              <label>ATTACK</label>
+              <input
+                type="number"
+                name="attack"
+                value={data.attack}
+                onChange={handleInputChange}
+              />
+            </p>
+            <p className={style.question}>
+              <label>DEFENSE</label>
+              <input
+                type="number"
+                name="defense"
+                value={data.defense}
+                onChange={handleInputChange}
+              />
+            </p>
+            <p className={style.question}>
+              <label>speed</label>
+              <input
+                type="number"
+                name="speed"
+                value={data.speed}
+                onChange={handleInputChange}
+              />
+            </p>
+            <p className={style.question}>
+              <label>height</label>
+              <input
+                type="number"
+                name="height"
+                value={data.height}
+                onChange={handleInputChange}
+              />
+            </p>
+            <p className={style.question}>
+              <label>weight</label>
+              <input
+                type="number"
+                name="weight"
+                value={data.weight}
+                onChange={handleInputChange}
+              />
+            </p>
           </div>
-          <div className={style.tipos}>
-            {options.slice(11, 20)?.map((t) => (
-              <div key={t.slot}>
-                <input
-                  type="checkbox"
-                  name={t.name}
-                  value={t.slot}
-                  id={t.slot}
-                  onChange={checkbox}
-                />
-                <label htmlFor={t.slot}>{t.name}</label>
-                {t.slot % 4 === 0 ? <br /> : null}
+          <div className={style.column}>
+            <div className={style.hiddenCB}>
+              <h1>Types</h1>
+              <div className={style.tipos}>
+                {options.slice(0, 10)?.map((t) => (
+                  <div key={t.slot}>
+                    <input
+                      type="checkbox"
+                      name={t.name}
+                      value={t.slot}
+                      id={t.slot}
+                      onChange={checkbox}
+                    />
+                    <label htmlFor={t.slot}>{t.name}</label>
+                    {t.slot % 4 === 0 ? <br /> : null}
+                  </div>
+                ))}
               </div>
-            ))}
+              {/* <div className={style.tipos}> */}
+                {options.slice(11, 20)?.map((t) => (
+                  <div key={t.slot}>
+                    <input
+                      type="checkbox"
+                      name={t.name}
+                      value={t.slot}
+                      id={t.slot}
+                      onChange={checkbox}
+                    />
+                    <label htmlFor={t.slot}>{t.name}</label>
+                    {t.slot % 4 === 0 ? <br /> : null}
+                  </div>
+                ))}
+              {/* </div> */}
+            </div>
           </div>
-        </div>
+          <div className={style.column}> <input type="submit" value="create" className={style.submit} /></div>
+        </section>
       </form>
     </div>
   );

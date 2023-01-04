@@ -57,4 +57,18 @@
   background-color: rgb(141, 146, 145);
 }
 
+.buttonreset{
+  background-color: rgb(186, 196, 194);
+  border-style: none;
+  width: 50px;
+  height: 25px;
+  margin-top: 5px;
+  border-radius: 2px;
+}
+
+.buttonreset:hover{
+  background-color: rgb(141, 146, 145);
+  transform: translateY(2px);
+}
+
 

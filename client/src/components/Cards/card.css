@@ -45,11 +45,17 @@ figure {
   width: 300px;
   margin-top: 40px;
   padding: 1em;
+  border-style: groove;
   border-radius: 15px;
-  background: #ddd;
+  background: rgb(141, 146, 145);
   text-align: left;
 }
-
+figure:visited{
+  color: rgb(141, 146, 145);
+}
+figure:link{
+  color: rgb(141, 146, 145);
+}
 .cardCaption {
   background-color: rgba(255, 255, 255, 0.65);
   padding: 1em;
@@ -69,7 +75,7 @@ figure {
   top: -50px;
   transform: translateY(-50%);
   color: #f2f2f2;
-  text-transform: uppercase;
+  text-transform: capitalize;
   letter-spacing: 0.1em;
   padding: 0.25em;
   line-height: 1;
@@ -82,6 +88,7 @@ figure {
   font-size: 1.5em;
   font-weight: 700;
   letter-spacing: 0.02em;
+  text-transform: capitalize;
 }
 
 .types {
@@ -90,7 +97,7 @@ figure {
 }
 
 figure:hover {
-  z-index: 5;
+  background: rgb(172, 175, 174);
   box-shadow: 0px 13px 30px -15px #000;
-  transform: translateY(-10px);
+  transform: rotate3d(1, 1, 1, 25deg);;
 }

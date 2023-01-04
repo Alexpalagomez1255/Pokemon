@@ -3,7 +3,7 @@ const initialState = {
   pokemons: [],
   type: "",
   order: "",
-  team: [],
+  fav: [],
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -39,10 +39,15 @@ const rootReducer = (state = initialState, action) => {
         order: action.payload,
       };
     case "ADD":
-      if(state.team.length === 8) state.team.shift();
+      if(state.fav.length === 8) state.fav.shift();
       return {
         ...state,
-        team: [...state.team, action.payload]
+        fav: [...state.fav, action.payload]
+      };
+      case "RESET":
+      return {
+        ...state,
+        pokemons: action.payload,
       };
     default:
       return state;
