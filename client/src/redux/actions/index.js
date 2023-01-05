@@ -1,5 +1,5 @@
 export const getTypes = () => async (dispatch) => {
-  const response = await fetch("http://localhost:3001/types");
+  const response = await fetch("https://pokeserver.onrender.com/types");
   console.log(response);
   const data = await response.json();
   console.log(data);
@@ -10,7 +10,7 @@ export const getTypes = () => async (dispatch) => {
 };
 
 export const getPokemons = () => async (dispatch) => {
-  const response = await fetch(`http://localhost:3001/pokemons`);
+  const response = await fetch(`https://pokeserver.onrender.com/pokemons`);
   const data = await response.json();
   dispatch({
     type: "GET_POKEMONS",
@@ -20,7 +20,7 @@ export const getPokemons = () => async (dispatch) => {
 
 export const getByName = (name) => async (dispatch) => {
   const response = await fetch(
-    `http://localhost:3001/pokemons?name=${name}`
+    `https://pokeserver.onrender.com/pokemons?name=${name}`
   );
   const data = await response.json();
   dispatch({
@@ -31,7 +31,7 @@ export const getByName = (name) => async (dispatch) => {
 
 export const filters = (num) => async (dispatch) => {
   const response = await fetch(
-    `http://localhost:3001/pokemons?by=${num}`
+    `https://pokeserver.onrender.com/pokemons?by=${num}`
   );
   const data = await response.json();
   dispatch({
@@ -62,7 +62,7 @@ export const add = (pokemon) => (dispatch) => {
 };
 
 export const resetFilters = () => async (dispatch) =>{
-  const response = await fetch(`http://localhost:3001/pokemons`);
+  const response = await fetch(`https://pokeserver.onrender.com/pokemons`);
   const data = await response.json();
   dispatch({
     type: "RESET",

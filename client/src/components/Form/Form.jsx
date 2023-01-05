@@ -66,7 +66,7 @@ export const Form = () => {
 
   const submit = async (e) => {
     e.preventDefault();
-    const create = await fetch("http://localhost:3001/pokemons", {
+    const create = await fetch("https://pokeserver.onrender.com/pokemons", {
       method: "POST",
       headers: {
         Accept: "application/json",
