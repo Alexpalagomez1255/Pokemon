@@ -16,7 +16,7 @@ export const Search = () => {
   const button1 = style.button;
 
   const reset = () => {
-    window.location.reload(true);
+    window.location = window.location;
   };
   const handleInputChange = (e) => {
     setPokemons(e.target.value);
