@@ -16,6 +16,7 @@ h5 {
 .container {
   display: flex;
   justify-content: space-around;
+  text-align:center;
   margin-top: -50px;
   flex-direction: row;
   flex-wrap: wrap;
@@ -28,6 +29,15 @@ h5 {
   padding-bottom: 40px;
 }
 
+.reset{
+  margin:0px auto;
+  padding: 8px 16px;
+  background-color: rgba(175, 172, 172, 0.65);
+}
+.reset:hover{
+  background-color:rgb(141, 146, 145) ;
+  transform: translateY(-2px);
+}
 .pages {
   margin-top: -40px;
   margin-bottom: 30px;

@@ -6,8 +6,7 @@ import {
   getByName,
   order,
   type,
-  getPokemons,
-} from "../../redux/actions";
+  } from "../../redux/actions";
 
 export const Search = () => {
   const dispatch = useDispatch();
@@ -17,9 +16,9 @@ export const Search = () => {
   const options = useSelector((store) => store.types);
   const button1 = style.button;
 
-  function handleOnClickReset() {
-    setPokemons("");
-  }
+  // function handleOnClickReset() {
+  //   setPokemons("");
+  // }
   const handleInputChange = (e) => {
     setPokemons(e.target.value);
   };
@@ -78,12 +77,12 @@ export const Search = () => {
           <option value="fuerza-">Lower Level Attack</option>
         </select>
       </div>
-      <button
+      {/* <button
         className={style.buttonreset}
         onClick={handleOnClickReset}
       >
         Reset
-      </button>
+      </button> */}
     </div>
   );
 };

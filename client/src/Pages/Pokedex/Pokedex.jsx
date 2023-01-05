@@ -35,9 +35,16 @@ export const Pokedex = () => {
     }
   };
 
+  const reset = () => {
+    window.location.reload();
+  };
+
   return (
     <div className={style.container}>
       <Search />
+      <button onClick={reset} className={style.reset}>
+          Reset
+        </button>
       <div className="botones">
         <button onClick={previusPage} className="pages">
           &laquo; Previous
@@ -48,9 +55,10 @@ export const Pokedex = () => {
       </div>
       <Card
         array={array}
-        img={"https://media.tenor.com/z7Zy8aEZSvsAAAAi/ash-now-loading-dark.gif"}
+        img={
+          "https://media.tenor.com/z7Zy8aEZSvsAAAAi/ash-now-loading-dark.gif"
+        }
       />
-      
     </div>
   );
 };
