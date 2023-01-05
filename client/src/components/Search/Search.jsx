@@ -6,6 +6,7 @@ import {
   getByName,
   order,
   type,
+  resetFilters
 } from "../../redux/actions";
 
 export const Search = () => {
@@ -15,9 +16,9 @@ export const Search = () => {
   const options = useSelector((store) => store.types);
   const button1 = style.button;
 
-  // const reset = () => {
-  //   window.location = window.location;
-  // };
+  const reset = (e) => {
+    dispatch(resetFilters(e.target.value));
+  };
   const handleInputChange = (e) => {
     setPokemons(e.target.value);
   };
@@ -76,7 +77,7 @@ export const Search = () => {
           <option value="fuerza-">Lower Level Attack</option>
         </select>
       </div>
-      <button className={style.buttonreset} onClick="history.go(0)">
+      <button className={style.buttonreset} value="reset" onClick={reset}>
         Reset
       </button>
     </div>
