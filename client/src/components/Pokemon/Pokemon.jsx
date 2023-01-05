@@ -28,7 +28,7 @@ export const Pokemon = () => {
   }, []);
 
   const detalles = async () => {
-    const data = await fetch(`http://localhost:3001/pokemons/${id}`);
+    const data = await fetch(`https://pokeserver.onrender.com/pokemons/${id}`);
 
     const pokemon = await data.json();
     setPokemon(pokemon);
