@@ -16,9 +16,9 @@ export const Search = () => {
   const options = useSelector((store) => store.types);
   const button1 = style.button;
 
-  const reset = (e) => {
-    dispatch(resetFilters(e.target.value));
-  };
+  function handleOnClickReset(e){
+    dispatch(resetFilters())
+  }
   const handleInputChange = (e) => {
     setPokemons(e.target.value);
   };
@@ -77,7 +77,7 @@ export const Search = () => {
           <option value="fuerza-">Lower Level Attack</option>
         </select>
       </div>
-      <button className={style.buttonreset} value="reset" onClick={reset}>
+      <button className={style.buttonreset} value="reset" onClick={e=>handleOnClickReset(e)}>
         Reset
       </button>
     </div>
