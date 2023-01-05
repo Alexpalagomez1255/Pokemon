@@ -4,6 +4,7 @@ const initialState = {
   type: "",
   order: "",
   fav: [],
+  reset:[]
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -47,7 +48,7 @@ const rootReducer = (state = initialState, action) => {
       case "RESET":
       return {
         ...state,
-        pokemons: action.payload,
+        reset: action.payload,
       };
     default:
       return state;
