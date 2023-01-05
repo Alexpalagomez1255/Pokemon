@@ -112,6 +112,7 @@ export const Form = () => {
               <input
                 type="number"
                 name="Hp"
+                placeholder="Hp level"
                 value={data.hp}
                 onChange={handleInputChange}
               />
@@ -121,6 +122,7 @@ export const Form = () => {
               <input
                 type="number"
                 name="attack"
+                placeholder="Attack level"
                 value={data.attack}
                 onChange={handleInputChange}
               />
@@ -130,6 +132,7 @@ export const Form = () => {
               <input
                 type="number"
                 name="defense"
+                placeholder="Defense level"
                 value={data.defense}
                 onChange={handleInputChange}
               />
@@ -139,6 +142,7 @@ export const Form = () => {
               <input
                 type="number"
                 name="speed"
+                placeholder="Speed level"
                 value={data.speed}
                 onChange={handleInputChange}
               />
@@ -148,6 +152,7 @@ export const Form = () => {
               <input
                 type="number"
                 name="height"
+                placeholder="Height"
                 value={data.height}
                 onChange={handleInputChange}
               />
@@ -157,6 +162,7 @@ export const Form = () => {
               <input
                 type="number"
                 name="weight"
+                placeholder="Weight"
                 value={data.weight}
                 onChange={handleInputChange}
               />

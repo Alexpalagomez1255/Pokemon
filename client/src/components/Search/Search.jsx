@@ -12,15 +12,13 @@ import {
 export const Search = () => {
   const dispatch = useDispatch();
   const [pokemons, setPokemons] = useState("");
-  useEffect(() => {
-    dispatch(getPokemons());
-  }, [dispatch]);
+  
 
   const options = useSelector((store) => store.types);
   const button1 = style.button;
 
-  function handleOnClickReset(e) {
-    dispatch(getPokemons());
+  function handleOnClickReset() {
+    setPokemons("");
   }
   const handleInputChange = (e) => {
     setPokemons(e.target.value);
@@ -82,7 +80,7 @@ export const Search = () => {
       </div>
       <button
         className={style.buttonreset}
-        onClick={(e) => handleOnClickReset(e)}
+        onClick={handleOnClickReset}
       >
         Reset
       </button>
