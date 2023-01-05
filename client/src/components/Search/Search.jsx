@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect,useState } from "react";
 import style from "./search.module.css";
 import { useSelector, useDispatch } from "react-redux";
 import {
@@ -6,18 +6,21 @@ import {
   getByName,
   order,
   type,
-  resetFilters
+  getPokemons,
 } from "../../redux/actions";
 
 export const Search = () => {
   const dispatch = useDispatch();
   const [pokemons, setPokemons] = useState("");
+  useEffect(() => {
+    dispatch(getPokemons());
+  }, [dispatch]);
 
   const options = useSelector((store) => store.types);
   const button1 = style.button;
 
-  function handleOnClickReset(e){
-    dispatch(resetFilters())
+  function handleOnClickReset(e) {
+    dispatch(getPokemons());
   }
   const handleInputChange = (e) => {
     setPokemons(e.target.value);
@@ -77,7 +80,10 @@ export const Search = () => {
           <option value="fuerza-">Lower Level Attack</option>
         </select>
       </div>
-      <button className={style.buttonreset} value="reset" onClick={e=>handleOnClickReset(e)}>
+      <button
+        className={style.buttonreset}
+        onClick={(e) => handleOnClickReset(e)}
+      >
         Reset
       </button>
     </div>

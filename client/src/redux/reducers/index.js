@@ -4,8 +4,7 @@ const initialState = {
   type: "",
   order: "",
   fav: [],
-  reset:[]
-};
+ };
 
 const rootReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -45,11 +44,7 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         fav: [...state.fav, action.payload]
       };
-      case "RESET":
-      return {
-        ...state,
-        reset: action.payload,
-      };
+     
     default:
       return state;
   }
