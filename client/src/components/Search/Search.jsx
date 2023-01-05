@@ -15,9 +15,9 @@ export const Search = () => {
   const options = useSelector((store) => store.types);
   const button1 = style.button;
 
-  const reset = () => {
-    window.location = window.location;
-  };
+  // const reset = () => {
+  //   window.location = window.location;
+  // };
   const handleInputChange = (e) => {
     setPokemons(e.target.value);
   };
@@ -76,7 +76,7 @@ export const Search = () => {
           <option value="fuerza-">Lower Level Attack</option>
         </select>
       </div>
-      <button className={style.buttonreset} onClick={reset}>
+      <button className={style.buttonreset} onClick="history.go(0)">
         Reset
       </button>
     </div>
