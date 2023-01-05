@@ -23,16 +23,16 @@ function App() {
       <Route exact path="/pokemon/:id" >
         <Pokemon />
       </Route>
-      <Route exact path="/">
+      <Route  path="/">
         <LandingPage />
       </Route>
-      <Route exact path="/home">
+      <Route  path="/home">
         <Pokedex />
       </Route>
-      <Route exact path="/create">
+      <Route path="/create">
         <Create />
       </Route>
-      <Route exact path="/favorite">
+      <Route  path="/favorite">
         <Favorite/>
       </Route>
       
